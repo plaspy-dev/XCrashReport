@@ -1,0 +1,15 @@
+# Build outputs and Visual Studio user files
+.vs/
+bin/
+obj/
+Debug/
+Release/
+Backup/
+UpgradeLog.htm
+*.aps
+*.user
+*.suo
+*.pdb
+*.zip
+*.dmp
+XCrashReport.ini

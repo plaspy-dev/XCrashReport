@@ -1,0 +1,265 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+IDR_MANIFEST            RT_MANIFEST             "app.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "XCrashReport.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_XCRASHREPORT_DIALOG DIALOGEX 0, 0, 290, 262
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "XCrashReport v1.0"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    LTEXT           "",IDC_BANNER,0,0,240,35
+    LTEXT           "",IDC_APP_ICON,240,0,50,35,SS_NOTIFY
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,35,295,1
+    LTEXT           "si usted estaba en la mitad de algo, la informacion de los que usted estaba trabajando podria haberse perdido",
+                    IDC_STATIC,15,43,260,16
+    LTEXT           "por favor comentenos sobre el problema.",
+                    IDC_PLEASE_TELL_US,15,65,260,12
+    LTEXT           "hemos creado un reporte de errores que usted puede enviarnos. Nosotros trataremos este informe como confidencial y anonimo.",
+                    IDC_STATIC,15,77,260,16
+    LTEXT           "para ayudarnos a diagnosticar la causa de este error y mejorar este software, por favor describanos que estaba haciendo cuando este error ocurrio, y envienos este reporte.",
+                    IDC_STATIC,15,94,261,25
+    LTEXT           "describa que estaba haciendo cuando el error ocurrio (opcional).",
+                    IDC_STATIC,15,121,260,8
+    EDITTEXT        IDC_WHAT,15,130,260,86,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | ES_WANTRETURN | WS_VSCROLL | WS_HSCROLL
+    LTEXT           "para ver que contiene este reporte,",IDC_STATIC,15,222,
+                    112,8
+    DEFPUSHBUTTON   "&No enviar",IDC_DO_NOT_SEND_ERROR,230,243,50,14
+    PUSHBUTTON      "&Enviar reporte de error.",IDC_SEND_ERROR,149,243,77,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,0,236,294,1
+    LTEXT           "Haga click aqui.",IDC_CLICK_HERE,129,222,52,8
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 270, 138
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Acerca de XCrashReport"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,14,20,20,SS_CENTERIMAGE | 
+                    WS_BORDER
+    LTEXT           "XCrashReport Version 1.0",IDC_STATIC,40,13,140,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright © 2003 Hans Dietrich",IDC_STATIC,40,27,164,8
+    LTEXT           "Este software es liberado dentro del domino publico. es de uso libre y en la forma que quiera, exepto que usted no puede vender el codigo fuente.",
+                    IDC_STATIC,40,43,164,24
+    LTEXT           "Este software es dado ""tal como esta y como es"" no hay garantia expresada o garantia implicita. No hay delito por algun daño o perdida a negocios que este software pueda ocacionar.",
+                    IDC_STATIC,40,75,164,34
+    LTEXT           "Enviar email a Hans Dietrich",IDC_ABOUT_EMAIL,90,120,90,
+                    8,SS_CENTERIMAGE
+    DEFPUSHBUTTON   "OK",IDOK,209,9,50,14,WS_GROUP
+END
+
+IDD_DETAILS DIALOGEX 0, 0, 350, 300
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Contenido del reporte de error"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "",IDC_STATIC_DETAILS_BANNER,0,0,351,16
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | 
+                    WS_TABSTOP,0,16,351,85
+    LTEXT           "Double-click en un archivos para ver su contenido.",
+                    IDC_STATIC,2,101,198,8
+    RTEXT           "Nombre:",IDC_STATIC,5,116,28,8
+    LTEXT           "",IDC_STATIC_NAME,33,116,100,8
+    RTEXT           "Descripcion:",IDC_STATIC,138,116,40,8
+    LTEXT           "",IDC_STATIC_DESC,182,116,160,8
+    EDITTEXT        IDC_CONTENTS,0,128,351,152,ES_MULTILINE | ES_AUTOVSCROLL | 
+                    ES_AUTOHSCROLL | WS_VSCROLL | WS_HSCROLL
+    DEFPUSHBUTTON   "&Cerrar",IDOK,297,284,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "E-mail", "hdietrich2@hotmail.com"
+            VALUE "FileDescription", "XCrashReport.exe"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "LegalCopyright", "Copyright © 2003 Hans Dietrich"
+            VALUE "ProductName", "XCrashReport"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_XCRASHREPORT_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 283
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_DETAILS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 343
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 293
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_CHECKBOXES          BITMAP                  "checkboxes.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About XCrashReport..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
