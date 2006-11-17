@@ -26,6 +26,7 @@ XCrashReport shows a Windows program’s crash report before it is sent for supp
 - The two XHyperLink 1.0 sources are included next to the app. See THIRD-PARTY-NOTICES.md for authors, notices and hashes.
 
 - A compatible 32-bit Simple MAPI client for the ordinary Send button. For local checks use a disposable profile and a test inbox.
+- The included LAppc 1.1.0.1 library lives under `vendor/`. It comes from the shared library backup associated with the recovered adapter (26 May 2020 UTC). This reconstruction does not ask for an activation code. The original activation branch stays under `ENABLE_LICENSE_CHECK`. The default mode supplies a sample display name and leaves the registry scope empty.
 
 ### Getting started
 
@@ -52,7 +53,7 @@ When integrating it into another Windows program, pass the executable name as th
 
 ### Project structure
 
-`Dlg.cpp` displays the report and chooses attachments. `Details.cpp` implements the attachment list and preview. `XZip.cpp` creates the archive and `SendEmail.cpp` hands it to Simple MAPI. The converted `XCrashReport.sln` builds the Win32 executable.
+`Dlg.cpp` displays the report and chooses attachments. `Details.cpp` implements the attachment list and preview. `XZip.cpp` creates the archive and `SendEmail.cpp` hands it to Simple MAPI. The converted `XCrashReport.sln` builds the Win32 executable. The adapter builds its included LAppc library from `vendor/`.
 
 ### Support
 
@@ -65,6 +66,8 @@ Build the current solution before proposing a focused change. Use synthetic repo
 ### History
 
 The 14 September 2004 date comes from the newest original source in the archived RAR. The 2026 reconstruction converted the original project and retained its `.vcproj` and `.sln` alongside the v145 solution. It provided a fictional mail recipient and an empty default registry export.
+
+The second snapshot was preserved in two identical copies. It gets the displayed support name and optional registry scope from LAppc, and uses an updated legacy Visual Studio project. The archived object and matching executable carry a COFF timestamp of November 17, 2006 at 15:10:11 UTC. They contain the adapter’s host-library calls. The reconstruction uses the available LAppc 1.1.0.1 from 2020, which exposes the needed interface. The original configuration library for the adapter was not recovered.
 
 ### License
 
@@ -97,6 +100,7 @@ XCrashReport muestra el informe de fallo de un programa de Windows antes de envi
 - Los dos fuentes de XHyperLink 1.0 se incluyen junto a la aplicación. Los avisos registran autores, condiciones y hashes.
 
 - Un cliente de 32 bits compatible con Simple MAPI para el botón normal de envío. Para ensayar usa un perfil desechable y un buzón de prueba.
+- LAppc 1.1.0.1 está incluida en `vendor/`. Procede del respaldo de bibliotecas propio asociado al adaptador (26 de mayo de 2020 en UTC). Esta reconstrucción funciona sin código de activación. La rama de activación original se conserva bajo `ENABLE_LICENSE_CHECK`. El modo predeterminado aporta un nombre de muestra y deja vacío el ámbito del registro.
 
 ### Cómo empezar
 
@@ -123,7 +127,7 @@ Al integrarlo en otro programa de Windows, pasa el nombre de su ejecutable como 
 
 ### Estructura del proyecto
 
-`Dlg.cpp` muestra el informe y selecciona los adjuntos. `Details.cpp` contiene la lista y la vista previa. `XZip.cpp` crea el archivo comprimido y `SendEmail.cpp` se lo entrega a Simple MAPI. La solución `XCrashReport.sln` convertida compila el ejecutable Win32.
+`Dlg.cpp` muestra el informe y selecciona los adjuntos. `Details.cpp` contiene la lista y la vista previa. `XZip.cpp` crea el archivo comprimido y `SendEmail.cpp` se lo entrega a Simple MAPI. La solución `XCrashReport.sln` convertida compila el ejecutable Win32. El adaptador compila la biblioteca LAppc incluida en `vendor/`.
 
 ### Soporte
 
@@ -136,6 +140,8 @@ Compila la solución actual antes de proponer un cambio puntual. Usa informes fi
 ### Historial
 
 La fecha del 14 de septiembre de 2004 corresponde al archivo fuente más reciente del RAR original. La reconstrucción de 2026 convirtió el proyecto y conserva el `.vcproj` y la `.sln` originales junto a la solución v145. Incluyó un destinatario ficticio y dejó vacío el ámbito predeterminado de exportación del registro.
+
+La segunda versión se conservó en dos copias idénticas. Toma de LAppc el nombre que acompaña el mensaje y el ámbito opcional del registro, y usa un proyecto histórico de Visual Studio actualizado. El objeto y el ejecutable archivados llevan la marca COFF del 17 de noviembre de 2006 a las 15:10:11 UTC. Ambos contienen las llamadas del adaptador a la biblioteca anfitriona. La reconstrucción usa LAppc 1.1.0.1 de 2020, que expone la interfaz necesaria. La biblioteca de configuración original del adaptador no se recuperó.
 
 ### Licencia
 

@@ -34,5 +34,8 @@
 /XZip.h -text
 /strcvt.cpp -text
 /strcvt.h -text
+/vendor/include/LAppc/MD5Checksum.h -text
+/vendor/include/LAppc/MD5ChecksumDefines.h -text
+/vendor/src/LAppc/MD5Checksum.cpp -text
 /SendEmail.cpp -text
 /SendEmail.h -text

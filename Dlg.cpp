@@ -20,13 +20,13 @@
 #include <io.h>
 #include "SendEmail.h"
 #include "XZip.h"
-#include "EmailDefines.h"
 #include "CrashFileNames.h"
+#include "EmailDefines.h"
 #include "BackupFile.h"
 #include "GetFileSizeAsString.h"
 #include "WriteRegistry.h"
-#include "RegistryDefines.h"
 #include "IniDefines.h"
+# include <LAppc/LAppc.h>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -471,7 +471,7 @@ void CDlg::GetRegistryDetails()
 		TRACE(_T("no registry files added from ini, using default\n"));
 
 		// dump registry to file
-		CString strKey = XCRASHREPORT_REGISTRY_KEY;
+		CString strKey = CApplicacion::GetAppKey();
 		if (!strKey.IsEmpty())
 		{
 			CString strFile = XCRASHREPORT_REGISTRY_DUMP_FILE;
@@ -640,21 +640,18 @@ void CDlg::OnSend()
 	}
 
 	BOOL bRet = TRUE;
+	
+	CString correo(XCRASHREPORT_SEND_TO_ADDRESS);
 
-	__try
-	{
-		bRet = SendEmail(m_hWnd,
-						 XCRASHREPORT_SEND_TO_ADDRESS, 
-						 XCRASHREPORT_SEND_TO_NAME, 
+	CString nombre= CApplicacion::GetAppName();
+	nombre+=" Soporte";
+
+	bRet = SendEmail(m_hWnd,
+						 correo,
+						 nombre, 
 						 szSubject, 
 						 szMessage, 
 						 szAttachmentPath);
-	}
-	__except(EXCEPTION_EXECUTE_HANDLER)
-	{
-		TRACE(_T("ERROR: exception in SendEmail()\n"));
-		bRet = FALSE;
-	}
 
 	if (!bRet)
 	{
@@ -665,7 +662,7 @@ void CDlg::OnSend()
 					_T("El reporte de error no fue enviado.  Por favor envienos el archivo\r\n")
 					_T("    '%s'\r\n")
 					_T("a %s."),
-					szAttachmentPath, XCRASHREPORT_SEND_TO_ADDRESS);
+					szAttachmentPath, correo);
 		AfxMessageBox(szMsg);
 	}
 

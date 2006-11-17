@@ -2,6 +2,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "XCrashReport", "XCrashReport.vcxproj", "{2BC81A6B-DCCB-40A7-9D4A-6A445E8B3ED9}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LAppc", "vendor\include\LAppc\LAppc.vcxproj", "{FA2E85EF-3871-4C5D-815E-5BBDCCDE7EA3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -12,5 +14,9 @@ Global
 		{2BC81A6B-DCCB-40A7-9D4A-6A445E8B3ED9}.Debug|Win32.Build.0 = Debug|Win32
 		{2BC81A6B-DCCB-40A7-9D4A-6A445E8B3ED9}.Release|Win32.ActiveCfg = Release|Win32
 		{2BC81A6B-DCCB-40A7-9D4A-6A445E8B3ED9}.Release|Win32.Build.0 = Release|Win32
+		{FA2E85EF-3871-4C5D-815E-5BBDCCDE7EA3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FA2E85EF-3871-4C5D-815E-5BBDCCDE7EA3}.Debug|Win32.Build.0 = Debug|Win32
+		{FA2E85EF-3871-4C5D-815E-5BBDCCDE7EA3}.Release|Win32.ActiveCfg = Release|Win32
+		{FA2E85EF-3871-4C5D-815E-5BBDCCDE7EA3}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 EndGlobal
