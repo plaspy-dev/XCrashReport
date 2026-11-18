@@ -1,0 +1,3 @@
+LIBRARY XCrashReportDemo
+EXPORTS
+  MAPISendMail=_CaptureDemoMail@20

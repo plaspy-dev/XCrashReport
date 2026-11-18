@@ -69,6 +69,20 @@ The 14 September 2004 date comes from the newest original source in the archived
 
 The second snapshot was preserved in two identical copies. It gets the displayed support name and optional registry scope from LAppc, and uses an updated legacy Visual Studio project. The archived object and matching executable carry a COFF timestamp of November 17, 2006 at 15:10:11 UTC. They contain the adapter’s host-library calls. The reconstruction uses the available LAppc 1.1.0.1 from 2020, which exposes the needed interface. The original configuration library for the adapter was not recovered.
 
+### Verification
+
+The verification below took place after the historical source was recovered. The test date records the later local run.
+
+**23 November 2026.** Each of the three commits built from its own solution using MSBuild 18.11.1.51303, MSVC 14.51.36231, and Windows SDK 10.0.26100.0 on Windows 11. In the normal build, the dialog showed the fictional report and listed `ERRORLOG.TXT` and `CRASH.DMP`. **No enviar** returned `1010`.
+
+A separate build of the same solution with an explicitly selected test MAPI provider handled **Enviar** (`1009`). The provider received the actual ZIP and the `DEMO-104` comment. Its test bridge relayed both to disposable Mailpit 1.27.4 on localhost. The received `DemoApp.zip` matched the one produced by the app, byte for byte. See [the test steps](examples/demo-mail/README.md).
+
+![Crash report listing a synthetic log and a dummy dump](docs/media/report-files.png)
+
+![Mailpit inbox displaying the DemoApp report, DEMO-104 comment and attachment indicator](docs/media/test-inbox.png)
+
+![The test enters DEMO-104, checks its two attachments and receives the email in Mailpit](docs/media/report-flow.gif)
+
 ### License
 
 The [MIT license](LICENSE) applies to the project’s own integration. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for the original code and build dependencies.
@@ -142,6 +156,20 @@ Compila la solución actual antes de proponer un cambio puntual. Usa informes fi
 La fecha del 14 de septiembre de 2004 corresponde al archivo fuente más reciente del RAR original. La reconstrucción de 2026 convirtió el proyecto y conserva el `.vcproj` y la `.sln` originales junto a la solución v145. Incluyó un destinatario ficticio y dejó vacío el ámbito predeterminado de exportación del registro.
 
 La segunda versión se conservó en dos copias idénticas. Toma de LAppc el nombre que acompaña el mensaje y el ámbito opcional del registro, y usa un proyecto histórico de Visual Studio actualizado. El objeto y el ejecutable archivados llevan la marca COFF del 17 de noviembre de 2006 a las 15:10:11 UTC. Ambos contienen las llamadas del adaptador a la biblioteca anfitriona. La reconstrucción usa LAppc 1.1.0.1 de 2020, que expone la interfaz necesaria. La biblioteca de configuración original del adaptador no se recuperó.
+
+### Verificación
+
+La verificación descrita abajo se hizo después de recuperar el código histórico. La fecha corresponde a la prueba local posterior.
+
+**23 de noviembre de 2026.** Los tres commits compilaron desde su propia solución con MSBuild 18.11.1.51303, MSVC 14.51.36231 y el SDK de Windows 10.0.26100.0 en Windows 11. En la compilación normal, la ventana mostró el informe ficticio y listó `ERRORLOG.TXT` y `CRASH.DMP`. **No enviar** devolvió `1010`.
+
+Una compilación aparte de la misma solución usó un proveedor MAPI de prueba seleccionado expresamente y ejecutó **Enviar** (`1009`). El proveedor recibió el ZIP real y el comentario `DEMO-104`. El puente de prueba entregó ambos a Mailpit 1.27.4, en un contenedor desechable en localhost. El archivo `DemoApp.zip` recibido coincidió byte a byte con el que produjo el programa. Consulta [los pasos de prueba](examples/demo-mail/README.md).
+
+![Informe de fallo que lista un registro ficticio y un archivo que representa el volcado](docs/media/report-files.png)
+
+![Buzón Mailpit con el informe de DemoApp, comentario DEMO-104 e indicador de adjunto](docs/media/test-inbox.png)
+
+![La prueba escribe DEMO-104, revisa los dos adjuntos y recibe el mensaje en Mailpit](docs/media/report-flow.gif)
 
 ### Licencia
 
